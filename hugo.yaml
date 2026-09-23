@@ -1,0 +1,55 @@
+# baseURL is set automatically by the GitHub Actions workflow.
+baseURL: "https://example.github.io/"
+languageCode: en-us
+title: Htet Aung Lin
+theme: PaperMod
+
+enableRobotsTXT: true
+pagination:
+  pagerSize: 10
+
+params:
+  env: production
+  description: "Portfolio of Htet Aung Lin — AI student and data engineer"
+  author: Htet Aung Lin
+  defaultTheme: auto          # follows the visitor's light/dark setting
+  ShowReadingTime: true
+  ShowToc: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+
+  # Home page in "profile" mode: photo, short intro, buttons
+  profileMode:
+    enabled: true
+    title: "Htet Aung Lin"
+    subtitle: "Final-year B.Sc. Artificial Intelligence student at Technische Hochschule Deggendorf. I build data pipelines and machine learning projects in Python."
+    # imageUrl: "images/profile.jpg"   # put a photo in static/images/ and uncomment
+    # imageWidth: 140
+    # imageHeight: 140
+    buttons:
+      - name: Projects
+        url: /projects/
+      - name: About me
+        url: /about/
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/YOUR-USERNAME"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/YOUR-PROFILE"
+    - name: email
+      url: "mailto:you@example.com"
+
+menu:
+  main:
+    - name: Projects
+      url: /projects/
+      weight: 1
+    - name: About
+      url: /about/
+      weight: 2
+    # Add your CV: put cv.pdf in the static/ folder, then uncomment
+    # - name: CV
+    #   url: /cv.pdf
+    #   weight: 3

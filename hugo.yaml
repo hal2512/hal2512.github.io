@@ -19,6 +19,11 @@ params:
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true   # allows inline SVG / HTML in markdown
+
   # Home page in "profile" mode: photo, short intro, buttons
   profileMode:
     enabled: true
@@ -35,11 +40,11 @@ params:
 
   socialIcons:
     - name: github
-      url: "https://github.com/YOUR-USERNAME"
+      url: "https://github.com/hal2512"
     - name: linkedin
-      url: "https://www.linkedin.com/in/YOUR-PROFILE"
+      url: "https://www.linkedin.com/in/htetaung-lin/"
     - name: email
-      url: "mailto:you@example.com"
+      url: "mailto:htetaunglin2512@gmail.com"
 
 menu:
   main:

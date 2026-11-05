@@ -65,9 +65,10 @@ export const projects: Project[] = [
     id: "hand-gesture-tetris",
     name: "Hand-Gesture Controlled Tetris",
     period: "03/2025 – 07/2025",
-    context: "Computer vision university project",
+    context: "Computer vision university project · team of 2",
     description: "Designed and trained a custom hand-gesture recognition model on normalised landmark features for low-latency control, and connected it to a Tetris game loop running at standard webcam frame rates.",
     techStack: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
+    githubUrl: "https://github.com/hal2512/hand-gesture-tetris",
     status: "archived",
   },
   {

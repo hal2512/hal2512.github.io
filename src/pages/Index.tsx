@@ -135,7 +135,7 @@ export default function Index() {
               className="mt-10 inline-flex items-center gap-3 font-sans text-base md:text-lg text-[hsl(30,10%,40%)]"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-[hsl(42,70%,50%)] shrink-0" aria-hidden="true" />
-              Open to internships &amp; working-student roles
+              Open to working-student roles and a mandatory internship (Pflichtpraktikum)
             </motion.p>
 
             {/* Contact Links */}

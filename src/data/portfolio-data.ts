@@ -18,7 +18,7 @@ import type {
 
 export const personalInfo: PersonalInfo = {
   name: "Htet Aung Lin",
-  title: "AI STUDENT & ML ENGINEER",
+  title: "AI STUDENT · MACHINE LEARNING",
   location: { city: "Deggendorf", country: "Germany" },
   website: "github.com/hal2512",
   email: "htetaunglin2512@gmail.com",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     name: "IoT Network Intrusion Detection",
     period: "03/2026 – 07/2026",
     context: "University group project · Deep Learning & Big Data",
-    description: "Built a multi-layer perceptron from scratch in PyTorch to classify IoT network traffic (RT-IoT2022, 123K flows) as normal or one of 9 attack types. Handled a 3,380:1 class imbalance with tuned SMOTE. 99.7% binary accuracy and 99.5% accuracy on 12 classes.",
+    description: "Built a custom MLP with a hand-written PyTorch training loop to classify IoT network traffic (RT-IoT2022, 123K flows) as normal or one of 9 attack types. Handled a 3,380:1 class imbalance with tuned SMOTE. 99.7% binary accuracy and 99.5% accuracy on 12 classes.",
     techStack: ["Python", "PyTorch", "scikit-learn", "SMOTE"],
     status: "archived",
   },
@@ -69,16 +69,6 @@ export const projects: Project[] = [
     description: "Designed and trained a custom hand-gesture recognition model on normalised landmark features for low-latency control, and connected it to a Tetris game loop running at standard webcam frame rates.",
     techStack: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
     githubUrl: "https://github.com/hal2512/hand-gesture-tetris",
-    status: "archived",
-  },
-  {
-    id: "habit-tracker",
-    name: "Habit Tracker & Recommendation",
-    period: "2025",
-    context: "Assistance Systems university project",
-    description: "A habit-tracking web app with a recommendation component, backed by a FastAPI service with unit and integration tests and Docker for reproducible builds.",
-    techStack: ["React", "Node.js", "MongoDB", "FastAPI", "PyTest", "Docker"],
-    githubUrl: "https://github.com/hal2512/habit_tracker_and_recommendation",
     status: "archived",
   },
   {

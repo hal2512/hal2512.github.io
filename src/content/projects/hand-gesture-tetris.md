@@ -1,7 +1,12 @@
 <!--
   HTML comments like this one are not shown on the site.
-  Worth adding later: a short demo GIF. Put it in public/projects/ and add ![Demo](/projects/tetris-demo.gif)
+  Worth adding later: a short demo GIF. Put it in public/projects/tetris/ and add ![Demo](/projects/tetris/demo.gif)
 -->
+
+<figure>
+<img src="/projects/tetris/open-hand.jpg" alt="The game running: a Tetris board on the left and the live webcam view on the right, where the player's raised open hand is boxed in green and labelled Open." loading="lazy" />
+<figcaption>The game in action: the webcam view on the right shows the detected hand and the recognised gesture in real time.</figcaption>
+</figure>
 
 ## Results at a glance
 
@@ -35,13 +40,32 @@
 
 The model also recognises **Open** and **Close** hand poses.
 
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;">
+<figure style="margin:0;">
+<img src="/projects/tetris/index-finger-left.jpg" alt="Webcam view labelled Index Finger: the player points up with one index finger, and the falling I-piece is pushed to the left edge of the board." loading="lazy" />
+<figcaption>Index finger: move left</figcaption>
+</figure>
+<figure style="margin:0;">
+<img src="/projects/tetris/pinkies-right.jpg" alt="Webcam view labelled Pinkies: the player raises only the little finger, and the falling I-piece sits against the right edge of the board." loading="lazy" />
+<figcaption>Pinkies: move right</figcaption>
+</figure>
+<figure style="margin:0;">
+<img src="/projects/tetris/peace-rotate.jpg" alt="Webcam view labelled Peace: the player shows two fingers in a V, and the falling I-piece has been rotated to stand vertically." loading="lazy" />
+<figcaption>Peace: rotate</figcaption>
+</figure>
+<figure style="margin:0;">
+<img src="/projects/tetris/ok-drop.jpg" alt="Webcam view labelled OK: the player makes an OK sign with thumb and index finger, while the I-piece falls in the middle of the board." loading="lazy" />
+<figcaption>OK: drop faster</figcaption>
+</figure>
+</div>
+
 ---
 
 ## My role
 
 Team of 2. I was responsible for **all model development and training**:
 
-- **Collecting the training data:** 5,940 labelled landmark samples across the 6 gestures
+- **Collecting the training data:** 5,940 labelled landmark samples across the 6 gestures, recorded with the data-collection mode described below
 - **Preprocessing:** wrist-relative, normalised landmark features
 - **Training and evaluating** the classifier
 - **Exporting** it to TensorFlow Lite for real-time use in the game
@@ -56,6 +80,28 @@ My teammate built the game UI in Pygame.
 - **Training:** 75% / 25% train / test split, early stopping on validation loss
 - **Evaluation:** confusion matrix and per-class precision and recall
 - **Weakest gesture:** "OK", at 0.84 precision. Class sizes were uneven, from 263 to 1,784 samples per gesture.
+
+---
+
+## Collecting more data
+
+The project includes a **data-collection mode**, so the model can be given more samples, or new gestures, and retrained later. I used it to record the whole training set.
+
+1. Run `python app.py`. It shows the webcam view with the detected hand.
+2. Press **`k`** to switch on logging mode. The screen shows "MODE: Logging Key Point".
+3. Hold a gesture in front of the camera and press its number key. Every frame the key is held saves the hand's normalised landmarks as one labelled sample in `keypoint.csv`.
+4. Press **`n`** to switch back to normal mode, then retrain with the notebook.
+
+| Key | Gesture |
+|---|---|
+| `0` | Open |
+| `1` | Close |
+| `2` | Index finger |
+| `3` | OK |
+| `4` | Peace |
+| `5` | Pinkies |
+
+Keys `6`–`9` are free, so a new gesture only needs a new label and a few hundred samples.
 
 ---
 

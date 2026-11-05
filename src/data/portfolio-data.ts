@@ -24,7 +24,7 @@ export const personalInfo: PersonalInfo = {
   email: "htetaunglin2512@gmail.com",
   phone: "",
   avatar: "",
-  bio: "I'm a final-year B.Sc. Artificial Intelligence student at TH Deggendorf with hands-on experience in machine learning, computer vision, and software development. Before AI, I studied medicine (M.B.B.S.) and co-founded a food delivery startup as its lead software engineer. I'm looking for an internship or working-student role in AI, ML, or data science, and I can start immediately.",
+  bio: "I'm a B.Sc. Artificial Intelligence student at TH Deggendorf (expected graduation 03/2028) who builds machine-learning models on real data, most recently a next-drink prediction model for BSH trained on 83M+ events. Before AI, I studied medicine and co-founded a food-delivery startup as its lead software engineer. I'm looking for a working-student role or my mandatory internship in ML or data science, and I can start immediately.",
   skills: "Python, Machine Learning, Computer Vision, Deep Learning, Data Engineering, Flutter",
 };
 
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     name: "Next-Cup Prediction",
     period: "03/2026 – 07/2026",
     context: "Industry project with BSH",
-    description: "Trained a model that predicts a user's next drink, using 83M+ records from over 210k devices. Reached 70% top-1 accuracy and 94% accuracy in predicting the top 3 drinks.",
+    description: "Team project: I owned the EDA, feature engineering and modelling pipeline. The model predicts a user's next drink from 83M+ records across over 210k devices: 70% top-1 and 94% top-3 accuracy, versus 60% / 76.5% for the machine's current last-drink default.",
     techStack: ["Python", "LightGBM", "Polars", "DuckDB", "Parquet", "scikit-learn"],
     status: "archived",
   },
@@ -101,7 +101,7 @@ export const experience: Experience[] = [
     location: "Yangon, Myanmar",
     startDate: "2021-07",
     endDate: "2021-12",
-    description: "Searched for target proteins and collected data, ran exploratory data analysis and chemical space analysis, and calculated molecular features and descriptors.",
+    description: "Searched databases for target proteins and collected the related data, ran exploratory data analysis and chemical space analysis, and calculated molecular features and descriptors for further analysis.",
     current: false,
   },
   {
@@ -123,17 +123,19 @@ export const education: Education[] = [
     degree: "B.Sc.",
     field: "Artificial Intelligence",
     startYear: "2023",
-    endYear: "Present",
+    endYear: "03/2028 (expected)",
     location: "Deggendorf, Germany",
+    details: "Includes a mandatory internship (Pflichtpraktikum) and the bachelor's thesis.",
   },
   {
     id: "edu-2",
-    institution: "IGCSE",
-    degree: "A-Levels",
+    institution: "Pearson Edexcel",
+    degree: "International A-Levels",
     field: "Mathematics, Physics & Biology",
     startYear: "2022",
     endYear: "2022",
     location: "Yangon, Myanmar",
+    details: "Taken for admission to a German university, as my medical university could not issue a mark transcript.",
   },
   {
     id: "edu-3",
@@ -161,29 +163,21 @@ export const certificates: Certificate[] = [
 
 export const languages: Language[] = [
   { language: "English", proficiency: "C1" },
-  { language: "German", proficiency: "A2" },
+  { language: "German", proficiency: "A2 (certified) · learning B1" },
   { language: "Burmese", proficiency: "Native" },
 ];
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: "Programming",
-    skills: "Python, Dart, JavaScript, SQL, C++, Bash",
-  },
-  {
-    category: "ML / AI",
-    skills: "scikit-learn, LightGBM, TensorFlow, PyTorch, OpenCV, YOLO, MediaPipe, Hugging Face",
+    category: "Machine learning",
+    skills: "PyTorch, scikit-learn, LightGBM, TensorFlow, OpenCV, MediaPipe",
   },
   {
     category: "Data",
-    skills: "pandas, NumPy, DuckDB, Parquet, matplotlib, seaborn, Streamlit, Power BI",
+    skills: "Python, SQL, pandas, NumPy, Polars, DuckDB, Parquet, matplotlib",
   },
   {
-    category: "Web / Mobile",
-    skills: "React, Node.js, MongoDB, FastAPI, Flutter, Firebase",
-  },
-  {
-    category: "Tools",
-    skills: "Git, GitHub, GitLab, Docker, REST APIs, Linux",
+    category: "Software & tools",
+    skills: "Git, Docker, Linux, FastAPI, Flutter (Dart), Firebase",
   },
 ];

@@ -5,7 +5,6 @@ export function Nav() {
   
   const links = [
     { href: "/", label: "Resume" },
-    { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ];
 

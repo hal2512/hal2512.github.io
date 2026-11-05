@@ -73,10 +73,15 @@ export interface Speaking {
 export interface Project {
   id: string;
   name: string;
+  /** e.g. "03/2026 – 07/2026" */
+  period?: string;
+  /** e.g. "Industry project with BSH" */
+  context?: string;
   description: string;
   techStack: string[];
   liveUrl?: string;
   githubUrl?: string;
+  /** "active" shows an "In progress" badge */
   status: "active" | "archived";
 }
 
@@ -105,4 +110,11 @@ export interface Language {
 export interface SkillCategory {
   category: string;
   skills: string;
+}
+
+export interface Certificate {
+  id: string;
+  name: string;
+  issuer?: string;
+  details?: string;
 }

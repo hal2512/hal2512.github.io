@@ -8,8 +8,8 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import Index from "./pages/Index";
 import StyleGuide from "./pages/StyleGuide";
 import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
+import { lazy, Suspense } from "react";
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 import EditorialStyleGuide from "./pages/EditorialStyleGuide";
 import NotFound from "./pages/NotFound";
 
@@ -27,8 +27,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/style-guide" element={<StyleGuide />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/projects/:slug" element={<Suspense fallback={<div className="min-h-screen bg-[hsl(30,25%,95%)]" />}><ProjectDetail /></Suspense>} />
               <Route path="/editorial-style-guide" element={<EditorialStyleGuide />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

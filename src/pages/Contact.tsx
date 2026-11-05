@@ -1,27 +1,20 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { personalInfo } from "@/data/portfolio-data";
-import { toast } from "sonner";
+import { personalInfo, socialLinks } from "@/data/portfolio-data";
 import { Nav } from "@/components/Nav";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // No backend: open the visitor's own mail client with the message pre-filled.
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast.success("Message sent! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+    const subject = encodeURIComponent(`Portfolio contact from ${formData.name}`);
+    const body = encodeURIComponent(`${formData.message}\n\n— ${formData.name}`);
+    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -37,27 +30,7 @@ export default function Contact() {
         >
           {/* Editorial Header */}
           <h1 className="font-serif text-5xl md:text-7xl leading-tight text-[hsl(30,10%,15%)] tracking-tight mb-4">
-            <span className="inline-flex items-center justify-center flex-wrap gap-x-4 gap-y-2">
-              <span className="opacity-60">"</span>Let's
-              <motion.span
-                initial={{ scale: 0.8, opacity: 0, y: 0 }}
-                animate={{ scale: 1, opacity: 1, y: [0, -5, 0] }}
-                transition={{
-                  scale: { delay: 0.3, duration: 0.5 },
-                  opacity: { delay: 0.3, duration: 0.5 },
-                  y: { delay: 0.8, duration: 3, repeat: Infinity, ease: "easeInOut" },
-                }}
-                className="inline-block w-14 h-14 md:w-18 md:h-18 rounded-xl overflow-hidden align-middle mx-1"
-              >
-                <img
-                  src={personalInfo.avatar}
-                  alt="Elena"
-                  className="w-full h-full object-cover"
-                />
-              </motion.span>
-              <span className="text-[hsl(42,70%,50%)] italic">talk</span>
-              <span className="opacity-60">"</span>
-            </span>
+            Get in <span className="text-[hsl(42,70%,50%)] italic">touch</span>
           </h1>
 
           <motion.p
@@ -66,7 +39,7 @@ export default function Contact() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-[hsl(30,10%,40%)] font-sans text-lg mb-12 max-w-md mx-auto"
           >
-            Have a project in mind? I'd love to hear about it.
+            Hiring for an AI, ML or data science internship or working-student role? I'd love to hear from you.
           </motion.p>
 
           {/* Contact Form */}
@@ -98,25 +71,6 @@ export default function Contact() {
 
             <div>
               <label
-                htmlFor="email"
-                className="block text-xs uppercase tracking-wider text-[hsl(30,10%,40%)] mb-2 font-sans"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                required
-                maxLength={255}
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-0 py-3 bg-transparent border-b-2 border-[hsl(30,15%,80%)] focus:border-[hsl(42,70%,50%)] outline-none font-serif text-xl text-[hsl(30,10%,15%)] placeholder:text-[hsl(30,10%,60%)] transition-colors"
-                placeholder="your@email.com"
-              />
-            </div>
-
-            <div>
-              <label
                 htmlFor="message"
                 className="block text-xs uppercase tracking-wider text-[hsl(30,10%,40%)] mb-2 font-sans"
               >
@@ -130,18 +84,17 @@ export default function Contact() {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full px-0 py-3 bg-transparent border-b-2 border-[hsl(30,15%,80%)] focus:border-[hsl(42,70%,50%)] outline-none font-serif text-xl text-[hsl(30,10%,15%)] placeholder:text-[hsl(30,10%,60%)] transition-colors resize-none"
-                placeholder="Tell me about your project..."
+                placeholder="Share a few details about the role, or paste a link to the job posting…"
               />
             </div>
 
             <motion.button
               type="submit"
-              disabled={isSubmitting}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full mt-8 px-8 py-4 bg-[hsl(30,10%,15%)] text-[hsl(30,25%,95%)] rounded-full font-sans text-sm tracking-wide hover:bg-[hsl(30,10%,25%)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full mt-8 px-8 py-4 bg-[hsl(30,10%,15%)] text-[hsl(30,25%,95%)] rounded-full font-sans text-sm tracking-wide hover:bg-[hsl(30,10%,25%)] transition-colors"
             >
-              {isSubmitting ? "Sending..." : "Send Message →"}
+              Open in email app →
             </motion.button>
           </motion.form>
 
@@ -154,15 +107,21 @@ export default function Contact() {
           >
             <div>
               <span className="uppercase tracking-wider text-xs opacity-60">Email</span>
-              <p className="mt-1">{personalInfo.email}</p>
+              <p className="mt-1">
+                <a href={`mailto:${personalInfo.email}`} className="hover:text-[hsl(42,70%,45%)]">{personalInfo.email}</a>
+              </p>
             </div>
-            <div>
-              <span className="uppercase tracking-wider text-xs opacity-60">Phone</span>
-              <p className="mt-1">{personalInfo.phone}</p>
-            </div>
+            {socialLinks.map((link) => (
+              <div key={link.platform}>
+                <span className="uppercase tracking-wider text-xs opacity-60">{link.platform}</span>
+                <p className="mt-1">
+                  <a href={link.url} target="_blank" rel="noopener noreferrer" className="hover:text-[hsl(42,70%,45%)]">{link.username}</a>
+                </p>
+              </div>
+            ))}
             <div>
               <span className="uppercase tracking-wider text-xs opacity-60">Location</span>
-              <p className="mt-1">{personalInfo.location.city}</p>
+              <p className="mt-1">{personalInfo.location.city}, {personalInfo.location.country}</p>
             </div>
           </motion.div>
           </motion.div>

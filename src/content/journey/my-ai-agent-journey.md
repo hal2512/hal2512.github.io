@@ -1,15 +1,17 @@
 ---
-title: My AI agent journey in ten days
-summary: Ten days building a local Hermes setup, from phone messages and memory to scheduled jobs and a specialist staff, with the failures left in.
+title: My AI agent journey, an ongoing build log
+summary: An ongoing log of my local Hermes setup, from phone messages and memory to scheduled jobs and a specialist staff, failures left in.
 date: 2026-11-18
 type: story
 order: 1
 tags: [Hermes, agents, macOS, automation]
 ---
 
-On November 9, I opened Hermes Agent on my MacBook Air M4. On November 18, a writer profile was drafting this series from the session logs. In between, I connected my phone, added memory, scheduled jobs, and started handing work to specialist agents. I also spent a surprising amount of time working out which Python a microphone button was using.
+On November 9, I opened Hermes Agent on my MacBook Air M4. By November 18, a writer profile was drafting this series from the session logs. In between, I connected my phone, added memory, scheduled jobs, and started handing work to specialist agents. I also spent a surprising amount of time working out which Python a microphone button was using.
 
 I'm a final-year AI student. This was a chance to work with agents beyond a chat window: give one tools, keep useful context between sessions, and see whether it could carry out work I could actually check. I directed the setup and made the account and permission decisions. The agents ran most commands and wrote most of the code, including these drafts. That division of work matters when describing what I built.
+
+This is a living series, not a finished project. I'll add new parts and update this overview as the setup changes. The first stretch covers November 9–18.
 
 This overview assumes you know what an AI model is. The linked tutorials explain the setup; you don't need to read all eight parts in order.
 
@@ -26,9 +28,9 @@ I can use a desktop conversation or send a phone message. Profiles give recurrin
 
 Multica and Hermes Kanban are different boards. I first used Multica to track tasks and experiment with isolated workers. Later, Hermes Kanban coordinated the permanent staff profiles. Neither board makes a worker's success report proof that its output works.
 
-## November 9–18
+## Timeline so far
 
-These are milestones, not ten clean daily releases. Several fixes took more than one attempt, and the tutorials group related work rather than following strict date order.
+These are milestones, not clean daily releases, and the table grows as the series does. Several fixes took more than one attempt, and the tutorials group related work rather than following strict date order.
 
 | When | What changed | What I had to check |
 |---|---|---|

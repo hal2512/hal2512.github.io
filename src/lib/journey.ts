@@ -8,6 +8,7 @@
 // type: tutorial            # "story" or "tutorial"
 // order: 3                  # position in the series (1 = first)
 // tags: [iMessage, Photon, Telegram]
+// status: coming-soon       # optional: listed with a "Coming soon" badge; body is a short teaser
 // ---
 //
 // Files whose name starts with "_" are ignored (drafts, templates).
@@ -20,6 +21,7 @@ export type JourneyPost = {
   type: "story" | "tutorial";
   order: number;
   tags: string[];
+  comingSoon: boolean;
   readingMinutes: number;
   body: string;
 };
@@ -63,6 +65,7 @@ export const journeyPosts: JourneyPost[] = Object.entries(files)
       type: data.type === "tutorial" ? "tutorial" : "story",
       order: Number(data.order ?? 99),
       tags: parseTags(data.tags),
+      comingSoon: data.status === "coming-soon",
       readingMinutes: Math.max(1, Math.round(words / 220)),
       body,
     } satisfies JourneyPost;

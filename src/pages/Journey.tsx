@@ -73,14 +73,18 @@ export default function Journey() {
                       <span className="text-[hsl(42,70%,40%)]">Part {post.order}</span>
                       <span aria-hidden>·</span>
                       <span>{post.type === "tutorial" ? "Tutorial" : "Story"}</span>
-                      {post.date && (
+                      {post.date && !post.comingSoon && (
                         <>
                           <span aria-hidden>·</span>
                           <time dateTime={post.date}>{formatDate(post.date)}</time>
                         </>
                       )}
                       <span aria-hidden>·</span>
-                      <span>{post.readingMinutes} min read</span>
+                      {post.comingSoon ? (
+                        <span className="px-2 py-0.5 rounded-full bg-[hsl(42,70%,90%)] text-[hsl(42,70%,30%)]">Coming soon</span>
+                      ) : (
+                        <span>{post.readingMinutes} min read</span>
+                      )}
                     </div>
                     <h2 className="mt-3 font-serif text-2xl md:text-3xl text-[hsl(30,10%,15%)] group-hover:text-[hsl(42,70%,40%)] transition-colors">
                       {post.title}

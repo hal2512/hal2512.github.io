@@ -13,7 +13,7 @@ I'm a final-year AI student. This was a chance to work with agents beyond a chat
 
 This is a living series, not a finished project. I'll add new parts and update this overview as the setup changes. The first stretch covers November 9–18.
 
-This overview assumes you know what an AI model is. The linked tutorials explain the setup; you don't need to read all eight parts in order.
+This overview assumes you know what an AI model is. The linked tutorials explain the setup; you don't need to read the parts in order.
 
 ## What the setup became
 
@@ -40,7 +40,7 @@ These are milestones, not clean daily releases, and the table grows as the serie
 | November 15 | Multica runtime and worker troubleshooting | The isolated task home, not just an online indicator |
 | November 16 | Parallel subagents building an interactive learning site | Shared content contracts, working exercises, and verified reading links |
 | November 17 | Research with independent auditors, then permanent staff and a dashboard | Source claims, model configuration, and failures in my existing browser tab |
-| November 18 | A writer profile and this series | Public-safe sources and a consistent account of what actually worked |
+| November 18 | The dashboard's pixel office, a writer profile and this series | Public-safe sources and a consistent account of what actually worked |
 
 ## The parts
 
@@ -85,6 +85,14 @@ Fixing startup wasn't the end. Model authentication and messaging authorization 
 [From subagents to an AI staff](/journey/from-subagents-to-an-ai-staff) follows parallel course-building and research jobs into seven permanent specialists: researcher, engineer, designer, career, tutor, secretary and writer. My main profile acts as chief of staff, handing work through Hermes Kanban.
 
 Temporary subagents could already load and save skills. Profiles added continuing roles and histories. The dashboard project then supplied less flattering lessons: a wrong usage percentage, stale browser assets and tests pointed at an old process. Those failures were more useful than another clean worker report.
+
+### 9. Watching the staff work
+
+[Building Mission Control](/journey/building-mission-control) covers the dashboard the staff built for me: a FastAPI server that reads Hermes's files read-only and sends every change through the `hermes kanban` CLI, then a pixel office where the agents walk to their desks when they work. Its fallback badge got its first real use when Claude hit a rate limit.
+
+### 10. Taking it off the laptop
+
+[Using the dashboard from my phone](/journey/using-the-dashboard-from-my-phone) is coming soon.
 
 ## What worked, and what remains experimental
 

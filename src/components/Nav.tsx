@@ -6,6 +6,7 @@ export function Nav() {
   const links = [
     { href: "/", label: "Resume" },
     { href: "/journey", label: "AI Agent Journey" },
+    { href: "/smart-house", label: "Smart House" },
     { href: "/contact", label: "Contact" },
   ];
 

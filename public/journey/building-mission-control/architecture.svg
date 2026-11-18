@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="t d">
+  <title id="t">How Mission Control reads and writes</title>
+  <desc id="d">A browser page with two views talks to a local FastAPI server on 127.0.0.1:7777. The server rebuilds a snapshot every 1.5 seconds from read-only sources (the Kanban database, each profile's session database, config files, agent logs and the Claude usage endpoint) and pushes it to the browser over server-sent events. Every write goes through the hermes kanban command line, and the gateway dispatcher starts the staff worker runs.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7067"/>
+    </marker>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c2932f"/>
+    </marker>
+  </defs>
+  <style>
+    .title { font: 600 30px Georgia, 'Times New Roman', serif; fill: #2a2622; }
+    .h { font: 600 19px Georgia, 'Times New Roman', serif; fill: #2a2622; }
+    .lbl { font: 15px -apple-system, 'Helvetica Neue', Arial, sans-serif; fill: #2a2622; }
+    .sm { font: 13px -apple-system, 'Helvetica Neue', Arial, sans-serif; fill: #7a7067; }
+    .mono { font: 13px ui-monospace, Menlo, Consolas, monospace; fill: #2a2622; }
+    .tag { font: 600 12px -apple-system, 'Helvetica Neue', Arial, sans-serif; fill: #c2932f; letter-spacing: 0.06em; }
+    .zone { fill: #f6f1ea; stroke: #d9cfc3; stroke-width: 1.5; }
+    .box { fill: #fffdf9; stroke: #d9cfc3; stroke-width: 1.5; }
+    .key { fill: #fffdf9; stroke: #c2932f; stroke-width: 2; }
+    .line { stroke: #7a7067; stroke-width: 1.8; fill: none; }
+    .gold { stroke: #c2932f; stroke-width: 2; fill: none; }
+    .dash { stroke: #7a7067; stroke-width: 1.5; fill: none; stroke-dasharray: 6 5; }
+  </style>
+
+  <rect width="1200" height="800" fill="#f6f1ea"/>
+  <text x="40" y="52" class="title">How Mission Control reads and writes</text>
+  <text x="40" y="80" class="sm">Everything on screen is read from files Hermes already keeps. Every change goes through the official CLI.</text>
+
+  <!-- Browser -->
+  <rect x="40" y="105" width="1120" height="110" rx="10" class="zone"/>
+  <text x="62" y="134" class="tag">BROWSER · VANILLA HTML, CSS, JS</text>
+  <rect x="62" y="148" width="330" height="50" rx="8" class="box"/>
+  <text x="227" y="178" text-anchor="middle" class="lbl">Mission Control view</text>
+  <rect x="412" y="148" width="330" height="50" rx="8" class="box"/>
+  <text x="577" y="178" text-anchor="middle" class="lbl">Pixel Office (384×256 canvas)</text>
+  <rect x="762" y="148" width="376" height="50" rx="8" class="box"/>
+  <text x="950" y="171" text-anchor="middle" class="lbl">Cat / Human mode, view, theme</text>
+  <text x="950" y="189" text-anchor="middle" class="sm">saved in localStorage only</text>
+
+  <!-- Browser <-> server arrows -->
+  <line x1="300" y1="285" x2="300" y2="222" class="gold" marker-end="url(#arrowGold)"/>
+  <text x="316" y="246" class="lbl">SSE /api/stream</text>
+  <text x="316" y="264" class="sm">new snapshot only when the data changed</text>
+  <line x1="820" y1="222" x2="820" y2="285" class="line" marker-end="url(#arrow)"/>
+  <text x="836" y="246" class="lbl">POST /api/tasks…</text>
+  <text x="836" y="264" class="sm">needs the X-Mission-Control header</text>
+
+  <!-- Server -->
+  <rect x="40" y="292" width="1120" height="170" rx="10" class="zone"/>
+  <text x="62" y="321" class="tag">FASTAPI SERVER · 127.0.0.1:7777 ONLY</text>
+  <rect x="62" y="336" width="250" height="106" rx="8" class="key"/>
+  <text x="80" y="362" class="h">Hub</text>
+  <text x="80" y="386" class="sm">rebuilds the snapshot every</text>
+  <text x="80" y="404" class="sm">1.5 s in a thread and pushes</text>
+  <text x="80" y="422" class="sm">it to every open tab</text>
+  <rect x="332" y="336" width="250" height="106" rx="8" class="box"/>
+  <text x="350" y="362" class="h">snapshot.py</text>
+  <text x="350" y="386" class="sm">agent state, current tool,</text>
+  <text x="350" y="404" class="sm">model and fallback, board,</text>
+  <text x="350" y="422" class="sm">needs-you, feed, tokens</text>
+  <rect x="602" y="336" width="250" height="106" rx="8" class="box"/>
+  <text x="620" y="362" class="h">usage.py</text>
+  <text x="620" y="386" class="sm">Claude usage at most every</text>
+  <text x="620" y="404" class="sm">10 min, cached on disk with</text>
+  <text x="620" y="422" class="sm">its fetch time</text>
+  <rect x="872" y="336" width="266" height="106" rx="8" class="box"/>
+  <text x="890" y="362" class="h">cli.py</text>
+  <text x="890" y="386" class="sm">every write is a subprocess:</text>
+  <text x="890" y="408" class="mono">hermes kanban &lt;verb&gt;</text>
+  <text x="890" y="428" class="sm">argv list, no shell</text>
+  <line x1="312" y1="389" x2="330" y2="389" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Read-only zone -->
+  <rect x="40" y="530" width="740" height="240" rx="10" class="zone"/>
+  <text x="62" y="559" class="tag">READ-ONLY SOURCES</text>
+  <rect x="62" y="574" width="220" height="80" rx="8" class="box"/>
+  <text x="80" y="602" class="mono">kanban.db</text>
+  <text x="80" y="624" class="sm">tasks, runs, events,</text>
+  <text x="80" y="642" class="sm">opened with mode=ro</text>
+  <rect x="300" y="574" width="220" height="80" rx="8" class="box"/>
+  <text x="318" y="602" class="mono">&lt;profile&gt;/state.db</text>
+  <text x="318" y="624" class="sm">sessions, pending tool</text>
+  <text x="318" y="642" class="sm">calls, model actually used</text>
+  <rect x="538" y="574" width="220" height="80" rx="8" class="box"/>
+  <text x="556" y="602" class="mono">config.yaml</text>
+  <text x="556" y="624" class="sm">model keys only: the</text>
+  <text x="556" y="642" class="sm">expected model per profile</text>
+  <rect x="62" y="670" width="335" height="80" rx="8" class="box"/>
+  <text x="80" y="698" class="mono">agent.log</text>
+  <text x="80" y="720" class="sm">tail for "Fallback activated: X → Y"</text>
+  <text x="80" y="738" class="sm">lines, shown in the feed</text>
+  <rect x="423" y="670" width="335" height="80" rx="8" class="box"/>
+  <text x="441" y="698" class="lbl">Anthropic usage endpoint</text>
+  <text x="441" y="720" class="sm">raw percentages, read through</text>
+  <text x="441" y="738" class="sm">Hermes's own login and Python</text>
+
+  <line x1="457" y1="442" x2="457" y2="526" class="line" marker-end="url(#arrow)"/>
+  <text x="469" y="490" class="sm">reads</text>
+  <line x1="727" y1="442" x2="727" y2="526" class="line" marker-end="url(#arrow)"/>
+  <text x="739" y="490" class="sm">reads</text>
+
+  <!-- Write path -->
+  <rect x="820" y="530" width="340" height="240" rx="10" class="zone"/>
+  <text x="842" y="559" class="tag">WRITES GO THROUGH HERMES</text>
+  <rect x="842" y="574" width="296" height="50" rx="8" class="key"/>
+  <text x="990" y="604" text-anchor="middle" class="mono">hermes kanban create / comment …</text>
+  <rect x="842" y="644" width="296" height="44" rx="8" class="box"/>
+  <text x="990" y="671" text-anchor="middle" class="lbl">Gateway dispatcher</text>
+  <rect x="842" y="706" width="296" height="44" rx="8" class="box"/>
+  <text x="990" y="733" text-anchor="middle" class="lbl">Staff worker runs (8 profiles)</text>
+  <line x1="990" y1="624" x2="990" y2="641" class="line" marker-end="url(#arrow)"/>
+  <line x1="990" y1="688" x2="990" y2="703" class="line" marker-end="url(#arrow)"/>
+  <line x1="1110" y1="442" x2="1110" y2="571" class="gold" marker-end="url(#arrowGold)"/>
+  <text x="1098" y="490" text-anchor="end" class="sm">writes</text>
+
+  <!-- Workers feed back into the read side -->
+  <path d="M842,728 L800,728 L800,662 L410,662 L410,658" class="dash" marker-end="url(#arrow)"/>
+  <text x="790" y="788" text-anchor="end" class="sm">Workers write their own sessions and task events, which the next snapshot picks up.</text>
+</svg>

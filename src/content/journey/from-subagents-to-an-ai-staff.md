@@ -116,4 +116,4 @@ The chief then wrote one brief for the whole series and filed three writing task
 
 What I'd do differently: set up a web backend that can actually read pages before the first research job, because two rounds of researchers had to work from search snippets. Put cache-busting and port checks into the build brief from day one, so QA doesn't have to find them. And decide on the staff's personality before cloning six of them.
 
-Previous: [Part 7: A project board for agents with Multica](/journey/a-project-board-for-agents-multica). This is the last part. Back to the start: [Part 1: My AI agent journey](/journey/my-ai-agent-journey).
+Previous: [Part 7: A project board for agents with Multica](/journey/a-project-board-for-agents-multica). Next: [Part 9: Building Mission Control](/journey/building-mission-control).

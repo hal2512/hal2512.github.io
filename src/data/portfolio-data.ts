@@ -24,7 +24,7 @@ export const personalInfo: PersonalInfo = {
   email: "htetaunglin2512@gmail.com",
   phone: "",
   avatar: "",
-  bio: "I'm a B.Sc. Artificial Intelligence student at TH Deggendorf (expected graduation 03/2028) who builds machine-learning models on real data, most recently a next-drink prediction model for BSH trained on 83M+ events. Before AI, I studied medicine and co-founded a food-delivery startup as its lead software engineer. I'm looking for a working-student role or my mandatory internship in ML or data science, and I can start immediately.",
+  bio: "I'm a B.Sc. Artificial Intelligence student at TH Deggendorf (expected graduation 07/2027) who builds machine-learning models on real data, most recently a next-drink prediction model for BSH trained on 83M+ events. Before AI, I studied medicine and co-founded a food-delivery startup as its lead software engineer. I'm looking for a working-student role or my mandatory internship in ML or data science, and I can start immediately.",
   skills: "Python, Machine Learning, Computer Vision, Deep Learning, Data Engineering, Flutter",
 };
 
@@ -50,6 +50,7 @@ export const projects: Project[] = [
     context: "University group project · Deep Learning & Big Data",
     description: "Built a custom MLP with a hand-written PyTorch training loop to classify IoT network traffic (RT-IoT2022, 123K flows) as normal or one of 9 attack types. Handled a 3,380:1 class imbalance with tuned SMOTE. 99.7% binary accuracy and 99.5% accuracy on 12 classes.",
     techStack: ["Python", "PyTorch", "scikit-learn", "SMOTE"],
+    githubUrl: "https://github.com/hal2512/iot-intrusion-detection",
     status: "archived",
   },
   {
@@ -59,6 +60,7 @@ export const projects: Project[] = [
     context: "University ML project · team of 2",
     description: "Predicted diabetes status (healthy / prediabetic / diabetic) from 253,680 CDC health-survey records with a 46:1 class imbalance. Showed why accuracy misleads here, found that a 5-question, no-lab feature subset keeps ~96% of performance, and reached ROC-AUC 0.82 on healthy vs. at-risk.",
     techStack: ["Python", "scikit-learn", "pandas", "Logistic Regression", "Random Forest", "SVM"],
+    githubUrl: "https://github.com/hal2512/Diabetes-Risk-Prediction-BRFSS-2015",
     status: "archived",
   },
   {
@@ -113,9 +115,9 @@ export const education: Education[] = [
     degree: "B.Sc.",
     field: "Artificial Intelligence",
     startYear: "2023",
-    endYear: "03/2028 (expected)",
+    endYear: "07/2027 (expected)",
     location: "Deggendorf, Germany",
-    details: "Includes a mandatory internship (Pflichtpraktikum) and the bachelor's thesis.",
+    details: "Includes a 6-month mandatory internship (Pflichtpraktikum) and the bachelor's thesis.",
   },
   {
     id: "edu-2",

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+<title id="title">What my laptop sleep test showed</title><desc id="desc">With the Mac awake both services can reach the gateway. During sleep neither gets an agent reply. After waking, Telegram can deliver its queued updates, subject to its retention and adapter settings. Photon texts sent during Hal's offline test did not reach Hermes later and needed resending.</desc>
+<style>.title{font:26px Georgia,serif;fill:#2a2622}.h{font:18px Georgia,serif;fill:#2a2622}.l{font:14px Arial,sans-serif;fill:#2a2622}.s{font:12.5px Arial,sans-serif;fill:#7a7067}.rule{stroke:#d9cfc3;stroke-width:1.5}</style>
+<rect width="1000" height="420" fill="#f6f1ea"/><text x="35" y="48" class="title">Closing the lid takes the agent offline</text>
+<rect x="200" y="90" width="235" height="255" rx="10" fill="#fffdf9" stroke="#d9cfc3"/><rect x="450" y="90" width="235" height="255" rx="10" fill="#eee7dd" stroke="#d9cfc3"/><rect x="700" y="90" width="265" height="255" rx="10" fill="#fffdf9" stroke="#c2932f"/>
+<text x="220" y="123" class="h">1 · Awake + connected</text><text x="470" y="123" class="h">2 · Mac asleep</text><text x="720" y="123" class="h">3 · Awake again</text>
+<text x="35" y="200" class="h">Telegram</text><text x="220" y="195" class="l">Request → reply</text><text x="470" y="195" class="l">No agent reply</text><text x="470" y="219" class="s">Updates wait at Telegram</text><text x="720" y="195" class="l">Backlog can arrive</text><text x="720" y="219" class="s">Up to 24 hours; settings apply</text>
+<line x1="220" y1="245" x2="945" y2="245" class="rule"/>
+<text x="35" y="285" class="h">iMessage / Photon</text><text x="220" y="285" class="l">Request → reply</text><text x="470" y="285" class="l">No agent reply</text><text x="720" y="285" class="l">My offline texts were missing</text><text x="720" y="309" class="s">I had to resend after connection</text>
+<text x="35" y="382" class="s">Observed on my Mac in November 2026, not a guarantee for every Photon deployment. A service install does not prevent sleep.</text>
+</svg>

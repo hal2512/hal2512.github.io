@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="t d">
+  <title id="t">Base setup of Hermes on a MacBook Air</title>
+  <desc id="d">The desktop app talks to a local Hermes backend. The backend uses Claude and GPT through OAuth logins, drives macOS apps through cua-driver, transcribes audio with faster-whisper, and stores state in ~/.hermes.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7067"/>
+    </marker>
+    <style>
+      .title{font-family:Georgia,'Times New Roman',serif;font-size:26px;fill:#2a2622}
+      .h{font-family:Georgia,'Times New Roman',serif;font-size:18px;fill:#2a2622}
+      .l{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:13px;fill:#7a7067}
+      .s{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:12px;fill:#7a7067}
+      .mono{font-family:Menlo,Consolas,monospace;font-size:12px;fill:#2a2622}
+      .box{fill:#fffdf9;stroke:#d9cfc3;stroke-width:1.5}
+      .key{fill:#fffdf9;stroke:#c2932f;stroke-width:2}
+      .line{stroke:#7a7067;stroke-width:1.5;fill:none}
+    </style>
+  </defs>
+  <rect width="1000" height="600" fill="#f6f1ea"/>
+  <text x="40" y="52" class="title">The base layer</text>
+  <text x="40" y="76" class="l">Everything runs on one MacBook Air M4. Only the models are in the cloud.</text>
+
+  <!-- Mac boundary -->
+  <rect x="30" y="100" width="640" height="470" rx="16" fill="none" stroke="#d9cfc3" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="50" y="126" class="s">MacBook Air (macOS)</text>
+
+  <!-- Desktop app -->
+  <rect x="60" y="150" width="200" height="80" rx="10" class="box"/>
+  <text x="80" y="182" class="h">Hermes desktop app</text>
+  <text x="80" y="205" class="s">chat, mic button, settings</text>
+
+  <!-- Backend -->
+  <rect x="330" y="150" width="300" height="110" rx="10" class="key"/>
+  <text x="350" y="184" class="h">Hermes backend (gateway)</text>
+  <text x="350" y="208" class="s">agent loop, tools, sessions</text>
+  <text x="350" y="230" class="mono">hermes_cli.main gateway run</text>
+
+  <line x1="260" y1="190" x2="326" y2="190" class="line" marker-end="url(#arr)"/>
+  <line x1="326" y1="210" x2="262" y2="210" class="line" marker-end="url(#arr)"/>
+
+  <!-- cua-driver -->
+  <rect x="60" y="310" width="250" height="100" rx="10" class="box"/>
+  <text x="80" y="342" class="h">cua-driver</text>
+  <text x="80" y="364" class="s">computer use: list_windows, capture,</text>
+  <text x="80" y="382" class="s">click, type. Needs Accessibility +</text>
+  <text x="80" y="400" class="s">Screen Recording permissions.</text>
+
+  <!-- whisper -->
+  <rect x="360" y="310" width="270" height="100" rx="10" class="box"/>
+  <text x="380" y="342" class="h">faster-whisper (small)</text>
+  <text x="380" y="364" class="s">local speech-to-text, no API key.</text>
+  <text x="380" y="382" class="s">Must be installed in the backend's</text>
+  <text x="380" y="400" class="s">own Python environment.</text>
+
+  <line x1="420" y1="260" x2="220" y2="306" class="line" marker-end="url(#arr)"/>
+  <line x1="490" y1="260" x2="490" y2="306" class="line" marker-end="url(#arr)"/>
+
+  <!-- apps -->
+  <text x="80" y="440" class="s">drives: Chrome, Finder, any app window</text>
+
+  <!-- hermes folder -->
+  <rect x="60" y="460" width="570" height="90" rx="10" class="box"/>
+  <text x="80" y="490" class="h">~/.hermes</text>
+  <text x="80" y="512" class="mono">config.yaml  .env  auth.json  memories/  skills/  logs/</text>
+  <text x="80" y="532" class="mono">tools/ · pinned executables    installs/ · backend venv</text>
+  <path d="M630 245 H650 V445 H600 V456" class="line" marker-end="url(#arr)"/>
+
+  <!-- Cloud -->
+  <rect x="710" y="100" width="260" height="470" rx="16" fill="none" stroke="#d9cfc3" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="730" y="126" class="s">Cloud</text>
+
+  <rect x="735" y="160" width="210" height="90" rx="10" class="box"/>
+  <text x="755" y="192" class="h">Anthropic</text>
+  <text x="755" y="214" class="s">Claude, via OAuth login</text>
+  <text x="755" y="232" class="s">(Claude Pro account)</text>
+
+  <rect x="735" y="280" width="210" height="90" rx="10" class="box"/>
+  <text x="755" y="312" class="h">OpenAI Codex</text>
+  <text x="755" y="334" class="s">GPT, via device-code login</text>
+  <text x="755" y="352" class="s">(ChatGPT Plus account)</text>
+
+  <line x1="630" y1="185" x2="731" y2="200" class="line" marker-end="url(#arr)"/>
+  <line x1="630" y1="230" x2="731" y2="315" class="line" marker-end="url(#arr)"/>
+
+  <text x="735" y="410" class="s">Check what is signed in:</text>
+  <text x="735" y="430" class="mono">hermes auth list</text>
+  <text x="735" y="460" class="s">Check the configured model:</text>
+  <text x="735" y="480" class="mono">hermes profile list</text>
+</svg>

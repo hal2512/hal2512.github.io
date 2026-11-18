@@ -5,6 +5,7 @@ export function Nav() {
   
   const links = [
     { href: "/", label: "Resume" },
+    { href: "/journey", label: "AI Agent Journey" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -16,7 +17,7 @@ export function Nav() {
             key={link.href}
             to={link.href}
             className={`font-sans text-sm tracking-wide transition-colors ${
-              location.pathname === link.href
+              (link.href === "/" ? location.pathname === "/" : location.pathname.startsWith(link.href))
                 ? "text-[hsl(30,10%,15%)]"
                 : "text-[hsl(30,10%,50%)] hover:text-[hsl(30,10%,15%)]"
             }`}

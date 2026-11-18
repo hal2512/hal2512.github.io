@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" width="1100" height="620" role="img" aria-labelledby="title desc">
+<title id="title">Three stages of a scheduled job</title>
+<desc id="desc">A local scheduler chooses a fresh agent for judgment or a script for deterministic checks. Final text is routed separately to local history or a phone. A sleeping Mac cannot execute either branch.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#7a7067"/></marker></defs>
+<style>.title{font:30px Georgia,serif;fill:#2a2622}.label{font:600 20px Arial,sans-serif;fill:#2a2622}.body{font:17px Arial,sans-serif;fill:#7a7067}.box{fill:#fffdf9;stroke:#d9cfc3;stroke-width:2}.line{fill:none;stroke:#7a7067;stroke-width:2;marker-end:url(#arrow)}.accent{fill:#c2932f;font:600 15px Arial,sans-serif}</style>
+<rect width="1100" height="620" fill="#f6f1ea"/>
+<text x="45" y="60" class="title">A schedule is only the first stage</text>
+<text x="45" y="98" class="body">Local execution needs an awake Mac, a running gateway, and working dependencies.</text>
+<text x="50" y="155" class="accent">1 / DISPATCH</text><text x="370" y="155" class="accent">2 / EXECUTION</text><text x="810" y="155" class="accent">3 / DELIVERY</text>
+<rect x="45" y="220" width="230" height="190" rx="14" class="box"/>
+<text x="70" y="258" class="label">Hermes scheduler</text><text x="70" y="295" class="body">Schedule + timezone</text><text x="70" y="325" class="body">Profile + job state</text><text x="70" y="375" class="body">Record late / failed runs</text>
+<path d="M275 280H315V235H355" class="line"/><path d="M275 355H315V425H355" class="line"/>
+<rect x="360" y="180" width="330" height="145" rx="14" class="box"/>
+<text x="385" y="216" class="label">Fresh agent session</text><text x="385" y="250" class="body">Morning brief / material news</text><text x="385" y="282" class="body">Self-contained prompt + skills</text>
+<rect x="360" y="365" width="330" height="145" rx="14" class="box"/>
+<text x="385" y="401" class="label">Script only, no model</text><text x="385" y="435" class="body">Inbox / issue snapshot checks</text><text x="385" y="467" class="body">Empty stdout means silence</text>
+<path d="M690 250H745V285H800" class="line"/><path d="M690 435H745V365H800" class="line"/>
+<rect x="805" y="220" width="250" height="190" rx="14" fill="#fffdf9" stroke="#c2932f" stroke-width="2"/>
+<text x="830" y="258" class="label">Route final text</text><text x="830" y="298" class="body">Local history</text><text x="830" y="330" class="body">Telegram topic</text><text x="830" y="362" class="body">Photon iMessage</text>
+<path d="M45 550H1055" stroke="#d9cfc3"/><text x="45" y="585" class="body">Check each stage. “Scheduled” does not mean “executed,” and “executed” does not mean “received.”</text>
+</svg>

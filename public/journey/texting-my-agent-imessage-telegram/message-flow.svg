@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550" role="img" aria-labelledby="title desc">
+<title id="title">Two message routes into Hermes</title>
+<desc id="desc">iMessage reaches Photon Cloud and a Node sidecar on the Mac. Telegram reaches its Bot API and the gateway adapter. Both feed Hermes, with voice attachments transcribed locally. Replies return through the originating service.</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7" fill="#7a7067"/></marker>
+<style>.title{font:26px Georgia,serif;fill:#2a2622}.head{font:18px Georgia,serif;fill:#2a2622}.label{font:14px Arial,sans-serif;fill:#2a2622}.small{font:12px Arial,sans-serif;fill:#7a7067}.box{fill:#fffdf9;stroke:#d9cfc3;stroke-width:1.5}.line{fill:none;stroke:#7a7067;stroke-width:1.5;marker-start:url(#arrow);marker-end:url(#arrow)}</style></defs>
+<rect width="1000" height="550" fill="#f6f1ea"/>
+<text x="35" y="48" class="title">The phone is a client. The Mac is the host.</text>
+<text x="35" y="75" class="small">Sender allowlists guard entry. Reply routes stay with the originating conversation.</text>
+<rect x="500" y="100" width="465" height="415" rx="15" fill="none" stroke="#d9cfc3" stroke-dasharray="6 5"/>
+<text x="520" y="125" class="small">On the Mac · requires an awake host and running gateway</text>
+<rect x="35" y="150" width="150" height="75" rx="10" class="box"/><text x="55" y="180" class="head">iMessage</text><text x="55" y="203" class="small">phone conversation</text>
+<rect x="270" y="150" width="150" height="75" rx="10" class="box"/><text x="290" y="180" class="head">Photon Cloud</text><text x="290" y="203" class="small">assigned agent line</text>
+<path d="M190 187H263" class="line"/>
+<rect x="530" y="150" width="180" height="75" rx="10" class="box"/><text x="550" y="180" class="head">Node sidecar</text><text x="550" y="203" class="small">managed by Hermes</text>
+<path d="M425 187H523" class="line"/>
+<rect x="35" y="285" width="150" height="75" rx="10" class="box"/><text x="55" y="315" class="head">Telegram</text><text x="55" y="338" class="small">DM or forum topic</text>
+<rect x="270" y="285" width="150" height="75" rx="10" class="box"/><text x="290" y="315" class="head">Bot API</text><text x="290" y="338" class="small">queued updates</text>
+<path d="M190 322H263" class="line"/>
+<rect x="530" y="285" width="180" height="75" rx="10" class="box"/><text x="550" y="315" class="head">Telegram adapter</text><text x="550" y="338" class="small">gateway connection</text>
+<path d="M425 322H523" class="line"/>
+<rect x="770" y="210" width="165" height="110" rx="10" fill="#fffdf9" stroke="#c2932f" stroke-width="2"/><text x="790" y="242" class="head">Hermes agent</text><text x="790" y="266" class="small">handling profile</text><text x="790" y="286" class="small">tools + model calls</text><text x="790" y="305" class="small">per-chat/topic history</text>
+<path d="M715 188H748V240H763" class="line"/><path d="M715 322H748V290H763" class="line"/>
+<rect x="535" y="415" width="395" height="65" rx="10" class="box"/><text x="555" y="442" class="label">Voice attachment → local Whisper → text input</text><text x="555" y="463" class="small">Successful manual transcription ≠ automatic STT working</text>
+<text x="40" y="437" class="label">No standalone echo project needed.</text><text x="40" y="464" class="small">Two-way arrows show request and reply paths,</text><text x="40" y="484" class="small">not shared desktop conversation history.</text>
+</svg>

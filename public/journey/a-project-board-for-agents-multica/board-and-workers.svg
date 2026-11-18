@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 650" width="1100" height="650" role="img" aria-labelledby="title desc">
+<title id="title">A board for two execution modes</title><desc id="desc">The personal session can do work and update an issue itself. Alternatively an assigned board issue starts work through a local daemon, runtime, and isolated worker. Both paths require verification before the issue becomes done.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#7a7067"/></marker></defs>
+<style>.title{font:30px Georgia,serif;fill:#2a2622}.label{font:600 20px Arial,sans-serif;fill:#2a2622}.body{font:17px Arial,sans-serif;fill:#7a7067}.box{fill:#fffdf9;stroke:#d9cfc3;stroke-width:2}.line{fill:none;stroke:#7a7067;stroke-width:2;marker-end:url(#arrow)}.accent{font:600 15px Arial,sans-serif;fill:#c2932f}</style>
+<rect width="1100" height="650" fill="#f6f1ea"/><text x="45" y="60" class="title">Board visibility and worker execution are separate</text>
+<rect x="45" y="115" width="310" height="165" rx="14" class="box"/><text x="70" y="155" class="label">Personal Hermes session</text><text x="70" y="193" class="body">Has the conversation context</text><text x="70" y="225" class="body">Can do work here</text><text x="70" y="256" class="body">Updates a matching issue</text>
+<path d="M355 195H455" class="line"/>
+<rect x="460" y="115" width="595" height="165" rx="14" fill="#fffdf9" stroke="#c2932f" stroke-width="2"/><text x="485" y="155" class="label">Multica workspace / issues</text><text x="485" y="198" class="body">Todo → In Progress → Review → Done</text><text x="485" y="235" class="body">Blocked when a required input or capability is missing</text>
+<text x="45" y="335" class="accent">ALTERNATIVE / ASSIGN AN ISSUE TO A LOCAL AGENT</text>
+<path d="M915 280V355H190V385" class="line"/>
+<rect x="45" y="390" width="285" height="140" rx="14" class="box"/><text x="70" y="430" class="label">Local daemon</text><text x="70" y="468" class="body">Awake Mac + online runtime</text><text x="70" y="500" class="body">Launch selected executable</text>
+<path d="M330 460H390" class="line"/>
+<rect x="395" y="390" width="310" height="140" rx="14" class="box"/><text x="420" y="430" class="label">Isolated Hermes worker</text><text x="420" y="468" class="body">Task home + explicit brief</text><text x="420" y="500" class="body">No automatic chat continuity</text>
+<path d="M705 460H765" class="line"/>
+<rect x="770" y="390" width="285" height="140" rx="14" class="box"/><text x="795" y="430" class="label">Verify the result</text><text x="795" y="468" class="body">Artifact / test / delivery</text><text x="795" y="500" class="body">Then update the issue</text>
+<text x="45" y="595" class="body">A skill can request board tracking. It does not intercept every prompt like an enforced hook.</text>
+</svg>

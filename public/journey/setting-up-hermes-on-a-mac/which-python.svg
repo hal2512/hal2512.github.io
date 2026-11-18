@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-labelledby="t d">
+  <title id="t">Three Pythons on one Mac</title>
+  <desc id="d">The system python3, Hermes's bundled Python under ~/.hermes/tools, and the backend's virtual environment under ~/.hermes/installs. Installs into the bundled Python did not fix the microphone. Installing into the backend venv and restarting the backend did.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7067"/>
+    </marker>
+    <style>
+      .title{font-family:Georgia,'Times New Roman',serif;font-size:26px;fill:#2a2622}
+      .h{font-family:Georgia,'Times New Roman',serif;font-size:18px;fill:#2a2622}
+      .l{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:13px;fill:#7a7067}
+      .s{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:12.5px;fill:#7a7067}
+      .ink{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:12.5px;fill:#2a2622}
+      .mono{font-family:Menlo,Consolas,monospace;font-size:11.5px;fill:#2a2622}
+      .box{fill:#fffdf9;stroke:#d9cfc3;stroke-width:1.5}
+      .key{fill:#fffdf9;stroke:#c2932f;stroke-width:2.5}
+      .line{stroke:#7a7067;stroke-width:1.5;fill:none}
+      .x{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:13px;fill:#7a7067;font-weight:600}
+      .ok{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:13px;fill:#c2932f;font-weight:600}
+    </style>
+  </defs>
+  <rect width="1000" height="560" fill="#f6f1ea"/>
+  <text x="40" y="52" class="title">Which Python does the backend use?</text>
+  <text x="40" y="76" class="l">Error in desktop.log on every mic attempt: "No STT provider available. Install faster-whisper ..."</text>
+
+  <!-- column 1 -->
+  <rect x="40" y="110" width="290" height="190" rx="12" class="box"/>
+  <text x="60" y="142" class="h">System python3</text>
+  <text x="60" y="166" class="mono">/usr/bin/python3, Homebrew</text>
+  <text x="60" y="196" class="s">An install here doesn't prove the</text>
+  <text x="60" y="216" class="s">backend can import the package.</text>
+  <text x="60" y="270" class="x">not used</text>
+
+  <!-- column 2 -->
+  <rect x="355" y="110" width="290" height="190" rx="12" class="box"/>
+  <text x="375" y="142" class="h">Bundled tools Python</text>
+  <text x="375" y="166" class="mono">~/.hermes/tools/python-3.14*/</text>
+  <text x="375" y="196" class="s">Where faster-whisper went on</text>
+  <text x="375" y="216" class="s">10, 13 and 14 Nov. Manual</text>
+  <text x="375" y="236" class="s">transcription worked from here.</text>
+  <text x="375" y="270" class="x">mic still failed</text>
+
+  <!-- column 3 -->
+  <rect x="670" y="110" width="290" height="190" rx="12" class="key"/>
+  <text x="690" y="142" class="h">Backend venv</text>
+  <text x="690" y="166" class="mono">~/.hermes/installs/&lt;id&gt;/</text>
+  <text x="690" y="182" class="mono">  environments/&lt;id&gt;/venv</text>
+  <text x="690" y="210" class="s">Found in the running process's</text>
+  <text x="690" y="230" class="s">PYTHONPATH. Install here with uv.</text>
+  <text x="690" y="270" class="ok">mic works after restart</text>
+
+  <!-- process box -->
+  <rect x="200" y="350" width="600" height="80" rx="12" class="box"/>
+  <text x="220" y="382" class="h">Running backend process</text>
+  <text x="220" y="406" class="mono">ps eww -p &lt;pid&gt; | tr ' ' '\n' | grep -E '^(PYTHONPATH|VIRTUAL_ENV)='</text>
+  <line x1="740" y1="350" x2="790" y2="304" class="line" marker-end="url(#arr)"/>
+  <text x="760" y="340" class="s">imports from</text>
+
+  <!-- second gotcha -->
+  <rect x="40" y="460" width="920" height="70" rx="12" fill="none" stroke="#c2932f" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="60" y="488" class="ink">Second gotcha: quitting and reopening the app did not restart the backend. It reconnected to the old</text>
+  <text x="60" y="510" class="ink">process, which still had no faster-whisper loaded. Compare the process start time in ps before and after.</text>
+</svg>

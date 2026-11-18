@@ -7,7 +7,7 @@
  * serves at /projects/cashsplit with a normal 200 status). Each copy gets its own title,
  * description and canonical URL, and a sitemap.xml lists them all.
  */
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -31,7 +31,24 @@ const projects = block[1]
   .filter((p) => p.id && p.name);
 if (projects.length === 0) throw new Error("prerender-routes: no projects found");
 
+// Read the "My AI Agent Journey" posts (frontmatter of src/content/journey/*.md)
+const journeyDir = join(root, "src/content/journey");
+const journey = (existsSync(journeyDir) ? readdirSync(journeyDir) : [])
+  .filter((f) => f.endsWith(".md") && !f.startsWith("_"))
+  .map((f) => {
+    const raw = readFileSync(join(journeyDir, f), "utf8");
+    const fm = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? "";
+    const get = (key) => fm.match(new RegExp(`^${key}:\\s*(.*?)\\s*$`, "m"))?.[1]?.replace(/^["']|["']$/g, "");
+    return { slug: f.replace(/\.md$/, ""), title: get("title") ?? f, summary: get("summary") ?? "" };
+  });
+
 const routes = [
+  {
+    path: "/journey",
+    title: `My AI Agent Journey – ${NAME}`,
+    description: `Blog posts and step-by-step tutorials from ${NAME} on building a personal AI agent: messaging, memory, scheduled jobs, project boards and a team of specialist agents.`,
+  },
+  ...journey.map((p) => ({ path: `/journey/${p.slug}`, title: `${p.title} – ${NAME}`, description: p.summary || p.title })),
   {
     path: "/contact",
     title: `Contact – ${NAME}`,

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-labelledby="t d">
+  <title id="t">Model per task, with a backup chain per profile</title>
+  <desc id="d">Opus profiles fall back from Claude Opus 5.5 to GPT-6.1 Sol, then GPT-6.1 Terra, then GPT-6 Luna. Sonnet profiles fall back to GPT-6.1 Terra, then Sol, then Luna. Haiku is only chosen per task and uses the profile's own chain.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7067"/>
+    </marker>
+  </defs>
+  <style>
+    .title { font: 600 30px Georgia, 'Times New Roman', serif; fill: #2a2622; }
+    .h { font: 600 19px Georgia, 'Times New Roman', serif; fill: #2a2622; }
+    .lbl { font: 15px -apple-system, 'Helvetica Neue', Arial, sans-serif; fill: #2a2622; }
+    .sm { font: 13px -apple-system, 'Helvetica Neue', Arial, sans-serif; fill: #7a7067; }
+    .cap { font: 600 12px -apple-system, 'Helvetica Neue', Arial, sans-serif; fill: #c2932f; letter-spacing: 0.06em; }
+    .box { fill: #fffdf9; stroke: #d9cfc3; stroke-width: 1.5; }
+    .primary { fill: #fffdf9; stroke: #c2932f; stroke-width: 2; }
+    .ghost { fill: none; stroke: #d9cfc3; stroke-width: 1.5; stroke-dasharray: 6 5; }
+    .band { fill: #efe7dc; }
+    .line { stroke: #7a7067; stroke-width: 1.5; fill: none; }
+  </style>
+  <rect width="1200" height="600" fill="#f6f1ea"/>
+  <text x="60" y="62" class="title">One model per task, one backup chain per profile</text>
+
+  <!-- column captions -->
+  <text x="60" y="112" class="cap">PROFILES</text>
+  <text x="320" y="112" class="cap">MAIN MODEL (CLAUDE)</text>
+  <text x="536" y="112" class="cap">BACKUP 1</text>
+  <text x="752" y="112" class="cap">BACKUP 2</text>
+  <text x="968" y="112" class="cap">BACKUP 3</text>
+
+  <!-- Row 1: Opus -->
+  <rect x="40" y="128" width="1120" height="110" rx="12" class="band"/>
+  <text x="60" y="168" class="h">Opus tier</text>
+  <text x="60" y="194" class="sm">chief of staff, researcher,</text>
+  <text x="60" y="212" class="sm">engineer, writer</text>
+  <rect x="320" y="148" width="180" height="70" rx="10" class="primary"/>
+  <text x="410" y="189" text-anchor="middle" class="lbl">Claude Opus 5.5</text>
+  <line x1="502" y1="183" x2="532" y2="183" class="line" marker-end="url(#arrow)"/>
+  <rect x="536" y="148" width="180" height="70" rx="10" class="box"/>
+  <text x="626" y="189" text-anchor="middle" class="lbl">GPT-6.1 Sol</text>
+  <line x1="718" y1="183" x2="748" y2="183" class="line" marker-end="url(#arrow)"/>
+  <rect x="752" y="148" width="180" height="70" rx="10" class="box"/>
+  <text x="842" y="189" text-anchor="middle" class="lbl">GPT-6.1 Terra</text>
+  <line x1="934" y1="183" x2="964" y2="183" class="line" marker-end="url(#arrow)"/>
+  <rect x="968" y="148" width="180" height="70" rx="10" class="box"/>
+  <text x="1058" y="189" text-anchor="middle" class="lbl">GPT-6 Luna</text>
+
+  <!-- Row 2: Sonnet -->
+  <rect x="40" y="254" width="1120" height="110" rx="12" class="band"/>
+  <text x="60" y="294" class="h">Sonnet tier</text>
+  <text x="60" y="320" class="sm">designer, career,</text>
+  <text x="60" y="338" class="sm">tutor, secretary</text>
+  <rect x="320" y="274" width="180" height="70" rx="10" class="primary"/>
+  <text x="410" y="315" text-anchor="middle" class="lbl">Claude Sonnet 5.5</text>
+  <line x1="502" y1="309" x2="532" y2="309" class="line" marker-end="url(#arrow)"/>
+  <rect x="536" y="274" width="180" height="70" rx="10" class="box"/>
+  <text x="626" y="315" text-anchor="middle" class="lbl">GPT-6.1 Terra</text>
+  <line x1="718" y1="309" x2="748" y2="309" class="line" marker-end="url(#arrow)"/>
+  <rect x="752" y="274" width="180" height="70" rx="10" class="box"/>
+  <text x="842" y="315" text-anchor="middle" class="lbl">GPT-6.1 Sol</text>
+  <line x1="934" y1="309" x2="964" y2="309" class="line" marker-end="url(#arrow)"/>
+  <rect x="968" y="274" width="180" height="70" rx="10" class="box"/>
+  <text x="1058" y="315" text-anchor="middle" class="lbl">GPT-6 Luna</text>
+
+  <!-- Row 3: Haiku -->
+  <rect x="40" y="380" width="1120" height="110" rx="12" class="band"/>
+  <text x="60" y="420" class="h">Haiku tier</text>
+  <text x="60" y="446" class="sm">no profile defaults to it;</text>
+  <text x="60" y="464" class="sm">picked per task only</text>
+  <rect x="320" y="400" width="180" height="70" rx="10" class="primary"/>
+  <text x="410" y="441" text-anchor="middle" class="lbl">Claude Haiku 5.5</text>
+  <line x1="502" y1="435" x2="532" y2="435" class="line" marker-end="url(#arrow)"/>
+  <rect x="536" y="400" width="612" height="70" rx="10" class="ghost"/>
+  <text x="842" y="430" text-anchor="middle" class="lbl">falls back along the assigned profile's own chain, not to Luna</text>
+  <text x="842" y="452" text-anchor="middle" class="sm">workaround: when Claude is out, the chief of staff assigns GPT-6 Luna directly</text>
+
+  <!-- footer notes -->
+  <text x="60" y="530" class="lbl">Per task: hermes kanban create ... --model &lt;model&gt; --provider &lt;provider&gt; (the profile's default stays as it is).</text>
+  <text x="60" y="556" class="sm">Backups kick in on rate limits, server errors and connection errors. The chain is set per profile with the fallback_providers config key.</text>
+</svg>

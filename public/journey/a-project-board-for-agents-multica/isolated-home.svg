@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 590" width="1100" height="590" role="img" aria-labelledby="title desc">
+<title id="title">Why the named-profile wrapper failed</title><desc id="desc">Multica supplies an isolated task home. Before the repair the wrapper selected personal-profile again, but the named profile did not exist inside that home. After repair the wrapper launched Hermes directly. Model credentials and messaging permissions still needed separate checks.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#7a7067"/></marker></defs>
+<style>.title{font:30px Georgia,serif;fill:#2a2622}.label{font:600 20px Arial,sans-serif;fill:#2a2622}.body{font:17px Arial,sans-serif;fill:#7a7067}.code{font:17px monospace;fill:#2a2622}.box{fill:#fffdf9;stroke:#d9cfc3;stroke-width:2}.line{fill:none;stroke:#7a7067;stroke-width:2;marker-end:url(#arrow)}.accent{font:600 15px Arial,sans-serif;fill:#c2932f}</style>
+<rect width="1100" height="590" fill="#f6f1ea"/><text x="45" y="60" class="title">Respect the task home the launcher supplied</text>
+<text x="45" y="105" class="body">Both attempts begin inside Multica’s isolated HERMES_HOME, not my normal desktop home.</text>
+<text x="45" y="157" class="accent">BEFORE / DOUBLE PROFILE SELECTION</text>
+<rect x="45" y="180" width="455" height="105" rx="12" class="box"/><text x="70" y="220" class="code">hermes -p personal-profile</text><text x="70" y="253" class="body">Search for a named profile again</text>
+<path d="M500 232H565" class="line"/>
+<rect x="570" y="180" width="485" height="105" rx="12" class="box"/><text x="595" y="220" class="label">Profile absent in the task home</text><text x="595" y="253" class="body">Worker exits during initialization</text>
+<text x="45" y="337" class="accent">AFTER / PRESERVE THE SUPPLIED HOME</text>
+<rect x="45" y="360" width="455" height="105" rx="12" fill="#fffdf9" stroke="#c2932f" stroke-width="2"/><text x="70" y="400" class="code">exec /path/to/hermes "$@"</text><text x="70" y="433" class="body">Forward arguments without selecting -p</text>
+<path d="M500 412H565" class="line"/>
+<rect x="570" y="360" width="485" height="105" rx="12" class="box"/><text x="595" y="400" class="label">Startup can proceed</text><text x="595" y="433" class="body">Verify model auth, then the task itself</text>
+<path d="M45 505H1055" stroke="#d9cfc3"/><text x="45" y="545" class="body">OAuth sharing needs approval. Messaging needs its own channel and recipient authorization.</text>
+</svg>

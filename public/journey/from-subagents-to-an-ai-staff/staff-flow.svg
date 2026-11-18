@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-labelledby="t d">
+  <title id="t">How work moves through my AI staff</title>
+  <desc id="d">Hal asks the chief of staff, which files tasks on the Hermes Kanban board. Seven staff profiles pick up tasks. The intended review workflow sends results through the chief of staff for checking before its report to Hal.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7067"/>
+    </marker>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c2932f"/>
+    </marker>
+  </defs>
+  <style>
+    .title { font: 600 30px Georgia, 'Times New Roman', serif; fill: #2a2622; }
+    .h { font: 600 19px Georgia, 'Times New Roman', serif; fill: #2a2622; }
+    .lbl { font: 15px -apple-system, 'Helvetica Neue', Arial, sans-serif; fill: #2a2622; }
+    .sm { font: 13px -apple-system, 'Helvetica Neue', Arial, sans-serif; fill: #7a7067; }
+    .model { font: 600 12px -apple-system, 'Helvetica Neue', Arial, sans-serif; fill: #c2932f; letter-spacing: 0.04em; }
+    .box { fill: #fffdf9; stroke: #d9cfc3; stroke-width: 1.5; }
+    .key { fill: #fffdf9; stroke: #c2932f; stroke-width: 2; }
+    .col { fill: #f6f1ea; stroke: #d9cfc3; stroke-width: 1; }
+    .line { stroke: #7a7067; stroke-width: 1.5; fill: none; }
+    .gold { stroke: #c2932f; stroke-width: 1.5; fill: none; stroke-dasharray: 5 4; }
+  </style>
+  <rect width="1200" height="700" fill="#f6f1ea"/>
+  <text x="60" y="62" class="title">How work moves through my AI staff</text>
+
+  <!-- Hal -->
+  <rect x="60" y="110" width="220" height="90" rx="10" class="box"/>
+  <text x="170" y="148" text-anchor="middle" class="h">Hal</text>
+  <text x="170" y="174" text-anchor="middle" class="sm">asks for something in chat</text>
+
+  <line x1="282" y1="155" x2="368" y2="155" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Chief of staff -->
+  <rect x="372" y="110" width="320" height="90" rx="10" class="key"/>
+  <text x="532" y="145" text-anchor="middle" class="h">Chief of staff</text>
+  <text x="532" y="168" text-anchor="middle" class="sm">personal-profile: splits the work,</text>
+  <text x="532" y="186" text-anchor="middle" class="sm">writes the brief, picks a model per task</text>
+
+  <line x1="694" y1="155" x2="770" y2="155" class="line" marker-end="url(#arrow)"/>
+  <text x="732" y="144" text-anchor="middle" class="sm">files</text>
+
+  <!-- Kanban board -->
+  <rect x="774" y="96" width="366" height="128" rx="10" class="box"/>
+  <text x="957" y="124" text-anchor="middle" class="h">Hermes Kanban board</text>
+  <rect x="790" y="140" width="76" height="34" rx="6" class="col"/>
+  <text x="828" y="162" text-anchor="middle" class="lbl">todo</text>
+  <rect x="876" y="140" width="76" height="34" rx="6" class="col"/>
+  <text x="914" y="162" text-anchor="middle" class="lbl">ready</text>
+  <rect x="962" y="140" width="76" height="34" rx="6" class="col"/>
+  <text x="1000" y="162" text-anchor="middle" class="lbl">running</text>
+  <rect x="1048" y="140" width="76" height="34" rx="6" class="col"/>
+  <text x="1086" y="162" text-anchor="middle" class="lbl">done</text>
+  <text x="957" y="200" text-anchor="middle" class="sm">a task with --parent waits in todo until its parents are done</text>
+  <text x="957" y="216" text-anchor="middle" class="sm">blocked = "needs Hal", with a question attached</text>
+
+  <!-- fan-out lines from board to staff -->
+  <line x1="957" y1="226" x2="957" y2="262" class="line"/>
+  <line x1="114" y1="262" x2="1086" y2="262" class="line"/>
+  <line x1="114" y1="262" x2="114" y2="296" class="line" marker-end="url(#arrow)"/>
+  <line x1="276" y1="262" x2="276" y2="296" class="line" marker-end="url(#arrow)"/>
+  <line x1="438" y1="262" x2="438" y2="296" class="line" marker-end="url(#arrow)"/>
+  <line x1="600" y1="262" x2="600" y2="296" class="line" marker-end="url(#arrow)"/>
+  <line x1="762" y1="262" x2="762" y2="296" class="line" marker-end="url(#arrow)"/>
+  <line x1="924" y1="262" x2="924" y2="296" class="line" marker-end="url(#arrow)"/>
+  <line x1="1086" y1="262" x2="1086" y2="296" class="line" marker-end="url(#arrow)"/>
+  <text x="600" y="252" text-anchor="middle" class="sm">the gateway dispatches each ready task to its assignee</text>
+
+  <!-- Staff row: 7 boxes, width 150, gap 12, start x=39 -->
+  <g>
+    <rect x="39" y="300" width="150" height="100" rx="10" class="box"/>
+    <text x="114" y="330" text-anchor="middle" class="h">researcher</text>
+    <text x="114" y="354" text-anchor="middle" class="sm">cited research</text>
+    <text x="114" y="384" text-anchor="middle" class="model">OPUS</text>
+
+    <rect x="201" y="300" width="150" height="100" rx="10" class="box"/>
+    <text x="276" y="330" text-anchor="middle" class="h">engineer</text>
+    <text x="276" y="354" text-anchor="middle" class="sm">code and apps</text>
+    <text x="276" y="384" text-anchor="middle" class="model">OPUS</text>
+
+    <rect x="363" y="300" width="150" height="100" rx="10" class="box"/>
+    <text x="438" y="330" text-anchor="middle" class="h">designer</text>
+    <text x="438" y="354" text-anchor="middle" class="sm">UI and diagrams</text>
+    <text x="438" y="384" text-anchor="middle" class="model">SONNET</text>
+
+    <rect x="525" y="300" width="150" height="100" rx="10" class="box"/>
+    <text x="600" y="330" text-anchor="middle" class="h">career</text>
+    <text x="600" y="354" text-anchor="middle" class="sm">internships, CV</text>
+    <text x="600" y="384" text-anchor="middle" class="model">SONNET</text>
+
+    <rect x="687" y="300" width="150" height="100" rx="10" class="box"/>
+    <text x="762" y="330" text-anchor="middle" class="h">tutor</text>
+    <text x="762" y="354" text-anchor="middle" class="sm">lessons, quizzes</text>
+    <text x="762" y="384" text-anchor="middle" class="model">SONNET</text>
+
+    <rect x="849" y="300" width="150" height="100" rx="10" class="box"/>
+    <text x="924" y="330" text-anchor="middle" class="h">secretary</text>
+    <text x="924" y="354" text-anchor="middle" class="sm">mail, calendar</text>
+    <text x="924" y="384" text-anchor="middle" class="model">SONNET</text>
+
+    <rect x="1011" y="300" width="150" height="100" rx="10" class="box"/>
+    <text x="1086" y="330" text-anchor="middle" class="h">writer</text>
+    <text x="1086" y="354" text-anchor="middle" class="sm">this blog</text>
+    <text x="1086" y="384" text-anchor="middle" class="model">OPUS</text>
+  </g>
+
+  <!-- Profile band -->
+  <rect x="39" y="420" width="1122" height="64" rx="10" class="col"/>
+  <text x="600" y="447" text-anchor="middle" class="lbl">Each one is a full Hermes profile: its own SOUL.md (job description), memory, skills and chat history.</text>
+  <text x="600" y="470" text-anchor="middle" class="sm">Idle profiles make no model calls. Active workers share the configured accounts and need an awake Mac.</text>
+
+  <!-- Return path -->
+  <line x1="230" y1="486" x2="230" y2="530" class="line" marker-end="url(#arrow)"/>
+  <rect x="80" y="534" width="300" height="96" rx="10" class="box"/>
+  <text x="230" y="566" text-anchor="middle" class="h">Worker reports back</text>
+  <text x="230" y="590" text-anchor="middle" class="sm">summary and file paths</text>
+  <text x="230" y="608" text-anchor="middle" class="sm">on the task: a claim</text>
+
+  <rect x="450" y="534" width="300" height="96" rx="10" class="key"/>
+  <text x="600" y="566" text-anchor="middle" class="h">Chief of staff checks</text>
+  <text x="600" y="590" text-anchor="middle" class="sm">reruns tests, restarts the app,</text>
+  <text x="600" y="608" text-anchor="middle" class="sm">compares numbers with the source</text>
+
+  <rect x="820" y="534" width="300" height="96" rx="10" class="box"/>
+  <text x="970" y="566" text-anchor="middle" class="h">Report to Hal</text>
+  <text x="970" y="590" text-anchor="middle" class="sm">staff, model, time, result,</text>
+  <text x="970" y="608" text-anchor="middle" class="sm">and what is still untested</text>
+
+  <line x1="382" y1="582" x2="446" y2="582" class="line" marker-end="url(#arrow)"/>
+  <line x1="752" y1="582" x2="816" y2="582" class="line" marker-end="url(#arrow)"/>
+
+  <!-- feedback to Hal (dashed gold) -->
+  <path d="M1120,582 L1170,582 L1170,80 L170,80 L170,106" class="gold" marker-end="url(#arrowGold)"/>
+</svg>

@@ -22,7 +22,7 @@ There were two tasks:
 
 ## Dataset
 
-The [RT-IoT2022 dataset](https://www.kaggle.com/datasets/rtiot2022/rt-iot2022) has **123,117 real network flows** recorded in a controlled IoT testbed. Each flow has 83 features: 2 categorical (protocol and service) and 81 numerical, such as packet timing, packet sizes and TCP flag counts.
+The [RT-IoT2022 dataset](https://archive.ics.uci.edu/dataset/942/rt-iot2022) has **123,117 real network flows** recorded in a controlled IoT testbed. Each flow has 83 features: 2 categorical (protocol and service) and 81 numerical, such as packet timing, packet sizes and TCP flag counts.
 
 ### The class imbalance
 
@@ -241,7 +241,7 @@ A **custom MLP** built with core PyTorch layers and a **hand-written training lo
 ## Links
 
 - Source code: private (university group project, TH Deggendorf)
-- Dataset: [RT-IoT2022 on Kaggle](https://www.kaggle.com/datasets/rtiot2022/rt-iot2022)
+- Dataset: [RT-IoT2022 on the UCI ML Repository](https://archive.ics.uci.edu/dataset/942/rt-iot2022)
 
 ## Stack
 

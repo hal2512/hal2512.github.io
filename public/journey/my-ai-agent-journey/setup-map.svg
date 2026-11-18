@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 850" role="img" aria-labelledby="title desc">
-<title id="title">My Hermes setup after ten days</title>
+<title id="title">My Hermes setup so far</title>
 <desc id="desc">Desktop and phone clients reach Hermes on an awake Mac. Remote model providers, Honcho and connected accounts sit outside the Mac. Inside it, local tools, memory, skills, scheduled jobs and staff profiles organize work. Multica is a separate external board connected to local workers; Hermes Kanban coordinates the permanent staff.</desc>
 <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#7a7067" stroke-width="1.3"/></marker></defs>
 <style>text{fill:#2a2622;font-family:Arial,sans-serif;font-size:17px}.heading{font-family:Georgia,serif;font-size:29px}.label{font-size:20px;font-weight:600}.small{font-size:15px;fill:#7a7067}.box{fill:#fffaf4;stroke:#d9cfc3;stroke-width:1.5}.flow{fill:none;stroke:#7a7067;stroke-width:1.5;marker-end:url(#arrow)}.accent{fill:#c2932f}</style>

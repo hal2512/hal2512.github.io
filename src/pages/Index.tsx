@@ -35,7 +35,7 @@ const EditorialLink = ({ href, children, className = "", external = false }: {
     {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     className={`relative inline-block group ${className}`}
   >
-    <span className="font-serif text-2xl md:text-3xl text-[hsl(30,10%,50%)] group-hover:text-[hsl(42,70%,50%)] transition-colors">
+    <span className="font-serif text-xl sm:text-2xl md:text-3xl text-[hsl(30,10%,50%)] group-hover:text-[hsl(42,70%,50%)] transition-colors">
       {children}
     </span>
     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[hsl(42,70%,50%)] transform origin-left transition-transform duration-300" />
@@ -132,10 +132,10 @@ export default function Index() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="mt-10 inline-flex items-center gap-3 font-sans text-base md:text-lg text-[hsl(30,10%,40%)]"
+              className="mt-10 mx-auto max-w-2xl font-sans text-[15px] sm:text-base md:text-lg leading-relaxed text-[hsl(30,10%,40%)] text-balance"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-[hsl(42,70%,50%)] shrink-0" aria-hidden="true" />
-              Open to a 6-month mandatory internship (Pflichtpraktikum) or a working-student role · available immediately
+              <span className="inline-block w-2.5 h-2.5 mr-2 rounded-full bg-[hsl(42,70%,50%)] align-middle -translate-y-px" aria-hidden="true" />
+              Open to a 6-month mandatory internship (Pflichtpraktikum) or a working&#8209;student role · available&nbsp;immediately
             </motion.p>
 
             {/* Contact Links */}

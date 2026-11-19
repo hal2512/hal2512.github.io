@@ -48,11 +48,6 @@ const routes = [
     title: `My AI Agent Journey – ${NAME}`,
     description: `Blog posts and step-by-step tutorials from ${NAME} on building a personal AI agent: messaging, memory, scheduled jobs, project boards and a team of specialist agents.`,
   },
-  {
-    path: "/smart-house",
-    title: `Smart House Project – ${NAME}`,
-    description: `${NAME}'s smart house project. Coming soon.`,
-  },
   ...journey.map((p) => ({ path: `/journey/${p.slug}`, title: `${p.title} – ${NAME}`, description: p.summary || p.title })),
   {
     path: "/contact",

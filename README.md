@@ -1,77 +1,35 @@
-# Welcome to your Lovable project
+# hal2512.github.io
 
-## Project info
+Portfolio of **Htet Aung Lin**, a B.Sc. Artificial Intelligence student at TH Deggendorf. Live at **https://hal2512.github.io**.
 
-**URL**: https://lovable.dev/projects/6fd12b81-631e-49d3-83b3-86e8b3fab3ae
+It contains machine learning and software projects (industry project with BSH, IoT intrusion detection, diabetes risk prediction, hand-gesture Tetris, CashSplit), each with a write-up, plus a blog series on building a personal AI agent setup.
 
-## How can I edit this code?
+## Stack
 
-There are several ways of editing your application.
+- Vite, React and TypeScript
+- Tailwind CSS with shadcn/ui components
+- Markdown content rendered with react-markdown (GFM)
+- GitHub Pages, deployed by GitHub Actions on every push to `main`
 
-**Use Lovable**
+## Structure
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6fd12b81-631e-49d3-83b3-86e8b3fab3ae) and start prompting.
+| Path | What it holds |
+|---|---|
+| `src/data/portfolio-data.ts` | CV data: experience, education, skills and the project list |
+| `src/content/projects/<id>.md` | One write-up per project |
+| `src/content/journey/<slug>.md` | Blog posts (frontmatter: title, summary, date, type, order, tags) |
+| `public/` | Images and diagrams used by the write-ups |
+| `scripts/prerender-routes.mjs` | Runs after `vite build`: writes an HTML file per route with its own title, description and canonical URL, plus `sitemap.xml` |
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Run locally
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm install
+npm run dev        # development server
+npm run build      # production build into dist/, including prerendered routes
+npm run preview    # serve the production build
 ```
 
-**Edit a file directly in GitHub**
+## Licence
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/6fd12b81-631e-49d3-83b3-86e8b3fab3ae) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-
-# ./tailwind-plus folder:
-
-The tailwind-plus folder contains tailwind components and themes to be used as inspiration for the project. DO NOT REMOVE THE FOLDER UNLESS SPECIFICALLY TOLD TO DO SO
+Code and content are © Htet Aung Lin. Project data comes from public datasets credited on each project page.

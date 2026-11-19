@@ -1,9 +1,3 @@
-<!--
-  HTML comments like this one are not shown on the site.
-  Updated 2026-11-18 from the latest code (github.com/hal2512/habit_tracker_and_recommendation).
-  Still to fill in: your exact role (solo or team) and screenshots.
--->
-
 ## What it is
 
 A **Streamlit habit tracker** built for the Assistance Systems course at TH Deggendorf. It logs a student's daily habits, flags days that look like burnout with an unsupervised anomaly detector ("The Guardian"), suggests specific recovery actions, and has a voice-enabled chatbot.

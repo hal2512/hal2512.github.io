@@ -6,7 +6,6 @@ export function Nav() {
   const links: { href: string; label: string; short?: string }[] = [
     { href: "/", label: "Resume" },
     { href: "/journey", label: "AI Agent Journey", short: "Journey" },
-    { href: "/smart-house", label: "Smart House", short: "Smart House" },
     { href: "/contact", label: "Contact" },
   ];
 

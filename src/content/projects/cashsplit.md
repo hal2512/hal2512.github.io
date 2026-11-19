@@ -1,9 +1,3 @@
-<!--
-  HTML comments like this one are not shown on the site.
-  Worth adding: screenshots (put them in public/projects/ and use ![Screen](/projects/cashsplit-1.png)),
-  and how many friends use it once that grows.
--->
-
 ## What it does
 
 CashSplit is a Flutter app for friend groups. You record shared expenses for each gathering (a "session"), and the app works out the **smallest set of who-pays-whom transfers** to settle up.

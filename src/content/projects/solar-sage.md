@@ -1,9 +1,3 @@
-<!--
-  HTML comments like this one are not shown on the site.
-  Your log says the repo isn't public yet and results aren't filled in. Once it runs, add e.g.
-  "5/5 eval cases pass, end-to-end recommendation in <10s", and set githubUrl in src/data/portfolio-data.ts.
--->
-
 ## What it is
 
 solar-sage is a **multi-tool AI agent** that advises homeowners on whether residential solar makes sense for them. It looks at **solar irradiance**, **electricity prices**, **panel yield** and **payback time**.

@@ -1,8 +1,3 @@
-<!--
-  HTML comments like this one are not shown on the site.
-  Worth adding later: a short demo GIF. Put it in public/projects/tetris/ and add ![Demo](/projects/tetris/demo.gif)
--->
-
 <figure>
 <img src="/projects/tetris/open-hand.jpg" alt="The game running: a Tetris board on the left and the live webcam view on the right, where the player's raised open hand is boxed in green and labelled Open." loading="lazy" />
 <figcaption>The game in action: the webcam view on the right shows the detected hand and the recognised gesture in real time.</figcaption>

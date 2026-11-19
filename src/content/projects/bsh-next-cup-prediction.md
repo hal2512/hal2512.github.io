@@ -1,10 +1,3 @@
-<!--
-  HTML comments like this one are not shown on the site.
-
-
-
--->
-
 ## Results at a glance
 
 | Metric | Result |

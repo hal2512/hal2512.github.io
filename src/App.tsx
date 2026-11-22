@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { PageViewTracker } from "@/components/PageViewTracker";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import { lazy, Suspense } from "react";
@@ -24,6 +25,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <PageViewTracker />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/contact" element={<Contact />} />
